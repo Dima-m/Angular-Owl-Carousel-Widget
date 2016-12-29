@@ -1,0 +1,74 @@
+body {
+    padding: 10px;
+    font: 15px arial, sans-serif;
+    color: #474747;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x- ng-cloak {
+    display: none !important;
+}
+
+.item {
+    width: 250px;
+    text-align: center;
+    margin: 30px auto;
+}
+
+img {
+    position: relative;
+    width:  250px;
+    height: 250px;
+    border-radius: 5px;
+}
+
+.source-name {
+    margin-top: 10px;
+    border: 1px solid #474747;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.description {
+    overflow: hidden;
+    text-align: justify;
+}
+
+.link {
+    color: #474747;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.owl-theme .owl-controls {
+    text-align: center;
+}
+
+#first-tab > data-owl-carousel > div.owl-controls.clickable {
+    margin-top: 40px;
+}
+
+#second-tab > data-owl-carousel > div.owl-controls.clickable {
+    margin-top: -30px;
+}
+
+#third-tab > data-owl-carousel > div.owl-controls.clickable {
+    margin-top: 55px;
+}
+
+.tab-content {
+    background-color: #e6e6e6;
+    padding: 5px 15px;
+    height: 600px;
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active > a:hover {
+    color: #474747;
+    background-color: #e6e6e6;
+}
+
+#tabs .nav-pills > li > a {
+    color: #474747;
+    border-radius: 0;
+}
