@@ -1,7 +1,7 @@
 body {
     padding: 10px;
     font: 15px arial, sans-serif;
-    color: #474747;
+    color: #616161;
 }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x- ng-cloak {
@@ -23,8 +23,7 @@ img {
 
 .source-name {
     margin-top: 10px;
-    border: 1px solid #474747;
-    border-radius: 5px;
+    border-bottom: 1px solid #616161;
     padding: 10px;
 }
 
@@ -64,11 +63,11 @@ img {
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:focus,
 .nav-pills > li.active > a:hover {
-    color: #474747;
+    color: #616161;
     background-color: #e6e6e6;
 }
 
 #tabs .nav-pills > li > a {
-    color: #474747;
+    color: #616161;
     border-radius: 0;
 }
