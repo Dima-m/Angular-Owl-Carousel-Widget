@@ -1,19 +1,26 @@
-angular.module('angular-owl-widget', [])
+angular.module('angular-owl-widget', ['ngResource'])
 
-.service('fetchService', ['$http', function($http) {
-	var fetchService = {};
+.factory('fetchService', ['$resource', function($resource) {
+  	return $resource('http://newsagg.innocode.no/api/feeds/:id', 
+  		{
+            id: '@id'
+        }, 
+        {
+            fetchFirstSource: {
+                method: 'GET',
+                params: { id: '32' }
+            },
+        
+            fetchSecondSource: {
+                method: 'GET',
+                params: { id: '66' }
+            },
 
-  fetchService.fetchFirstSource = function() {
-  	return $http.get('http://newsagg.innocode.no/api/feeds/32');
-  };
-
-  fetchService.fetchSecondSource = function() {
-  	return $http.get('http://newsagg.innocode.no/api/feeds/66');
-  };
-
-  fetchService.fetchThirdSource = function() {
-  	return $http.get('http://newsagg.innocode.no/api/feeds/64');
-  };
+            fetchThirdSource: {
+                method: 'GET',
+                params: { id: '64' }
+            }
+        });
 
   return fetchService;
 }])
@@ -22,21 +29,9 @@ angular.module('angular-owl-widget', [])
 	getData();
 
 	function getData() {
-		fetchService.fetchFirstSource().then(function(resp) {
-			var responeData = resp.data;
-			$scope.firstFeedName = responeData.feed.name;
-			$scope.firstFeedNews = _.forEach(responeData.news, function(value) { return value; });
-		});
-		fetchService.fetchSecondSource().then(function(resp) {
-			var responeData = resp.data;
-			$scope.secondFeedName = responeData.feed.name;
-			$scope.secondFeedNews = _.forEach(responeData.news, function(value) { return value; });
-		});
-		fetchService.fetchThirdSource().then(function(resp) {
-			var responeData = resp.data;
-			$scope.thirdFeedName = responeData.feed.name;
-			$scope.thirdFeedNews = _.forEach(responeData.news, function(value) { return value; });
-		});
+		$scope.firstFeed = fetchService.fetchFirstSource();
+		$scope.secondFeed = fetchService.fetchSecondSource();
+		$scope.thirdFeed = fetchService.fetchThirdSource();
 	}
 }])
 

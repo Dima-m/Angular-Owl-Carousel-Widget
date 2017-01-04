@@ -19,20 +19,20 @@
         </div>
         <ul  class="nav nav-pills">
             <li class="active">
-                <a href="#first-tab" data-toggle="tab">{{firstFeedName}}</a>
+                <a href="#first-tab" data-toggle="tab">{{firstFeed.feed.name}}</a>
             </li>
             <li>
-                <a href="#second-tab" data-toggle="tab">{{secondFeedName}}</a>
+                <a href="#second-tab" data-toggle="tab">{{secondFeed.feed.name}}</a>
             </li>
             <li>
-                <a href="#third-tab" data-toggle="tab">{{thirdFeedName}}</a>
+                <a href="#third-tab" data-toggle="tab">{{thirdFeed.feed.name}}</a>
             </li>
         </ul>
 
         <div class="tab-content clearfix">
             <div class="tab-pane active" id="first-tab">
                 <data-owl-carousel class="owl-carousel" data-options="defaultOptions">
-                    <div owl-carousel-item="" ng-repeat="item in firstFeedNews" class="item" ng-if="item.image !== null">
+                    <div owl-carousel-item="" ng-repeat="item in firstFeed.news" class="item" ng-if="item.image !== null">
                         <a ng-href="{{item.link}}" target="_blank">
                             <img ng-src="{{item.image}}" alt="{{item.source.name}}"/>
                         </a>
@@ -43,7 +43,7 @@
             </div>
             <div class="tab-pane" id="second-tab">
                 <data-owl-carousel class="owl-carousel" data-options="defaultOptions">
-                    <div owl-carousel-item="" ng-repeat="item in secondFeedNews" class="item" ng-if="item.image !== null">
+                    <div owl-carousel-item="" ng-repeat="item in secondFeed.news" class="item" ng-if="item.image !== null">
                         <a ng-href="{{item.link}}" target="_blank">
                             <img ng-src="{{item.image}}" alt="{{item.source.name}}"/>
                         </a>
@@ -54,7 +54,7 @@
             </div>
             <div class="tab-pane" id="third-tab">
                 <data-owl-carousel class="owl-carousel" data-options="defaultOptions">
-                    <div owl-carousel-item="" ng-repeat="item in thirdFeedNews" class="item" ng-if="item.image !== null">
+                    <div owl-carousel-item="" ng-repeat="item in thirdFeed.news" class="item" ng-if="item.image !== null">
                         <a ng-href="{{item.link}}" target="_blank">
                             <img ng-src="{{item.image}}" alt="{{item.source.name}}"/>
                         </a>
@@ -68,9 +68,9 @@
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-resource.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.3/lodash.min.js"></script>
 <script src="js/app.js"></script>
 </html>
