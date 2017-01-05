@@ -2,7 +2,7 @@ angular.module('angular-owl-widget', ['ngResource'])
 
 .factory('fetchService', ['$resource', function($resource) {
   	return $resource('http://newsagg.innocode.no/api/feeds/:id', 
-  		{
+  	{
             id: '@id'
         }, 
         {
