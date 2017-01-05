@@ -21,8 +21,6 @@ angular.module('angular-owl-widget', ['ngResource'])
                 params: { id: '64' }
             }
         });
-
-  return fetchService;
 }])
 
 .controller('MainCtrl', ['$scope', 'fetchService', function($scope, fetchService) {
@@ -46,19 +44,19 @@ angular.module('angular-owl-widget', ['ngResource'])
 					pagination: true,
 					scrollPerPage: true,
 					responsive: {
-				    480: {
-				      items: 1,
-					  scrollPerPage: false
-				    },
-				    678: {
-				      items: 2,
-					  scrollPerPage: false
-				    },
-				    960: {
-				      items: 3
-				    }
-				  }
-				};
+					    480: {
+					      items: 1,
+						  scrollPerPage: false
+					    },
+					    678: {
+					      items: 2,
+						  scrollPerPage: false
+					    },
+					    960: {
+					      items: 3
+					    }
+					  }
+					};
 				$(element).owlCarousel(defaultOptions);
 			};
 		}
